@@ -44,7 +44,13 @@ body {
     gap: .5rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
- 
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .city-form {
     display: flex;
     flex-direction: column;
@@ -85,4 +91,42 @@ body {
     align-items: center;
     gap: .5rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.weather-panel img {
+    width: 80px;
+}
+
+.weather-panel .date {
+    font-weight: 700;
+}
+
+.weather-panel.today {
+    color: #fff;
+    background-color: #263561;
+}
+
+
+.weather-panel.forecast {
+    color: #000;
+    background-color: #fff;
+}
+
+.weather-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+@media screen and (min-width: 760px) {
+    .page-container {
+        grid-template-columns:  360px 1fr;
+        height: 100%;
+    }
 }
