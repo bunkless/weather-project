@@ -10,15 +10,77 @@
     <div class="page-container">
         <div class="sidebar">
             <form id="cityForm" class="city-form">
-                <label for="city">Introduceti orasul</label>
+                <label for="city">Enter the city</label>
                 <input id="city" type="text" placeholder="Bucuresti, Pitesti, Cluj" required>
-                <button class="btn btn-search">Cauta</button>
+                <button class="btn btn-search">Search</button>
             </form>
-            <div class="separator hh">
-
+            <div class="separator">
+                <span class="separator-text">Or</span>
+            </div>
+            <button id="locationBtn" class="btn btn-location">Use the current location</button>
+        </div>
+        <div class="page-content">
+            <div>
+                <h2 class="section-title">The weather in Bucharest today</h2>
+                <div class="weather-panel today">
+                    <div class="weather-details">
+                        <p class="date">2024-10-08, 13:10</p>
+                        <p>Temperature: 10.7°C</p>
+                        <p>Wind: 9.8 km/h</p>
+                        <p>Moisture: 63%</p>
+                    </div>
+                    <div>
+                        <img src="weather-icons/cloudy.svg" alt="weather icons">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">The weather in Bucharest in the following days</h2>
+                <div class="weather-items">
+                    <div class="weather-panel forecast">
+                        <div class="weather-details">
+                            <p class="date">2024-10-08, 13:10</p>
+                            <p>Temperature: 10.7°C</p>
+                            <p>Wind: 9.8 km/h</p>
+                            <p>Moisture: 63%</p>
+                        </div>
+                        <div>
+                            <img src="weather-icons/cloudy.svg" alt="weather icons">
+                        </div>
+                        <div class="weather-panel today">
+                            <div class="weather-details">
+                                <p class="date">2024-10-08, 13:10</p>
+                                <p>Temperature: 10.7°C</p>
+                                <p>Wind: 9.8 km/h</p>
+                                <p>Moisture: 63%</p>
+                            </div>
+                            <div>
+                                <img src="weather-icons/cloudy.svg" alt="weather icons">
+                            </div>
+                            <div class="weather-panel today">
+                                <div class="weather-details">
+                                    <p class="date">2024-10-08, 13:10</p>
+                                    <p>Temperature: 10.7°C</p>
+                                    <p>Wind: 9.8 km/h</p>
+                                    <p>Moisture: 63%</p>
+                                </div>
+                                <div>
+                                    <img src="weather-icons/cloudy.svg" alt="weather icons">
+                                </div>
+                                <div class="weather-panel today">
+                                    <div class="weather-details">
+                                        <p class="date">2024-10-08, 13:10</p>
+                                        <p>Temperature: 10.7°C</p>
+                                        <p>Wind: 9.8 km/h</p>
+                                        <p>Moisture: 63%</p>
+                                    </div>
+                                    <div>
+                                        <img src="weather-icons/cloudy.svg" alt="weather icons">
+                                    </div>
+                </div>
             </div>
         </div>
     </div>
    <script src="script.js"></script>  
 </body>
-</html>
+</html> 
