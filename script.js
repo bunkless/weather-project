@@ -28,7 +28,9 @@ async function onCityFormSubmit(event) {
     cityCoordinates.lat,
     cityCoordinates.long
   );
-console.log(weatherResponse);
+
+const weatherData = parseApiData(weatherResponse);
+console.log(weatherData);
 
 }
 
@@ -64,4 +66,47 @@ async function getWeather(lat, long) {
     const response = await fetch(apiUrl.toString());
     const data = await response.json();
     return data;
+}
+
+function parseApiData(data) {
+  const numberOfItems = data.hourly.time.length;
+  let currentWeather = null;
+  const forecasts = [];
+
+  const currentDateTime = new Date();
+
+  for(let i = 0; i < numberOfItems; i++) {
+    const itemDateTime = new Date(data.hourly.time[i]);
+
+    const isToday = currentDateTime.toDateString() === itemDateTime.toDateString();
+
+    const isCurrentHour = currentDateTime.getHours() === itemDateTime.getHours();
+
+    if(isToday && isCurrentHour) {
+      currentWeather = {
+        data: data.hourly.time[i],
+        temp: data.hourly.temperature_2m[i],
+        wind: data.hourly.wind_speed_10m[i],
+        humidity: data.hourly.relative_humidity_2m[i],
+        code: data.hourly.weather_code[i],
+      };
+    }else if (isCurrentHour) {
+      forecasts.push({
+        data: data.hourly.time[i],
+        temp: data.hourly.temperature_2m[i],
+        wind: data.hourly.wind_speed_10m[i],
+        humidity: data.hourly.relative_humidity_2m[i],
+        code: data.hourly.weather_code[i],
+      });
+    }
+  }
+
+  return {
+    current: currentWeather,
+    forecasts: forecasts,
+  }
+}
+
+function dispkayWeather(cityName, weather) {
+  const pageContent = document.querySelector(".page-content");
 }
